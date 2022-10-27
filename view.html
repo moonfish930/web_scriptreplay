@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+  <title>terminal_web_player</title>
+  <style>
+    .terminal {
+      font-family: monospace;
+      position: absolute;
+    }
+  
+    .tty_ctrl {
+      position: absolute;
+      top: 400px;
+      left: 20px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    window.addEventListener("load", function(event){
+      document.getElementById("play").addEventListener('click', play, false);
+      document.getElementById("stop").addEventListener('click', stop, false);
+      document.getElementById("speed").addEventListener('change', set_speed, false);
+      
+    }, false);
+  </script>
+
+</head>
+
+
+<body>
+  <script src="term.js"></script>
+  <script src="view.js"></script>
+  <div class="tty_ctrl">
+    <fieldset>
+      <legend>file input</legend>
+      " typescript: "
+      <input type="file" id="typescript" name="typescript">
+      <br><br>
+      " timingfile: "
+      <input type="file" id="timingfile" name="typescript">
+      <br>
+    </fieldset>
+    <br><br><br>
+    <fieldset>
+      <legend>play control</legend>
+      <button id="play">play</button>
+      <button id="stop">stop</button>
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend>output property</legend>
+      Speed
+      <select id="speed">
+        <option value="0.25">slowest</option>
+        <option value="0.5">slower</option>
+        <option value="0.75">slow</option>
+        <option value="1.0" selected="selected">normal</option>
+        <option value="1.5">fast</option>
+        <option value="2.0">faster</option>
+        <option value="4.0">fastest</option>
+      </select>
+    </fieldset>
+  </div>
+</body>
